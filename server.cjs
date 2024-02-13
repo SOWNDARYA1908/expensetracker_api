@@ -13,9 +13,10 @@ connectToDb(function(error) {
         console.log('Could not establish connection...')
         console.log(error)
     } else {
-        app.listen(6000)
+        const port = process.env.PORT || 6000
+        app.listen(port)
         db = getDb()
-        console.log('Listening on port 8000...')
+        console.log(`Listening on port 6000 ${port}`)
     }
 })
 app.post('/add-entry', function(request, response) {
